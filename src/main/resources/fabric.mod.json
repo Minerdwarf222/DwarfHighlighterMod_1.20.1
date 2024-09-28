@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "minerdwarfhighlighter",
+  "version": "1.2.2_dev",
+
+  "name": "Dwarf Highlighter Mod",
+  "description": "This mod is will output a client chat message when you close a barrel that has an item you want.",
+  "authors": [
+    "Minerdwarf222"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/minerdwarfhighlighter/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.dwarfhighlight.DwarfHighlightMod"
+    ],
+    "modmenu": [
+    	"net.dwarfhighlight.DwarfHighlighterModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "minerdwarfhighlighter.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "fabric-api": "*",
+    "minecraft": ">=1.20.0",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

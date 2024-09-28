@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.dwarfhighlight.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [],
+  "client": [
+	"DwarfHighlightMixin",
+	"DwarfHighlightFishingPickupMixin",
+	"DwarfHighlightChatStealMixin",
+	"DwarfHighlightBossBarMixin",
+	"DwarfHighlightBossBarRenderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
