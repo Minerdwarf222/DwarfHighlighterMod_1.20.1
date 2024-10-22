@@ -188,44 +188,44 @@ public class DwarfHighlighterModMenuIntegration implements ModMenuApi {
 				
 				//Just write line if comment, skip, or empty
 				if(input_line.length()==0) { 
-					if(items_in_title.size() != 0) {
-						for(String item_name : items_in_title) {
-							
-							int first_space = item_name.indexOf(' ');
-							
-							if(first_space!=-1) {
-								String potential_region = item_name.substring(0, first_space);
-								switch(potential_region) {
-								
-								case ("ring"):
-									item_name = "3" + item_name.substring(first_space);
-									break;
+					if(items_in_title.size() == 0) {
+						temp_write.newLine();
+						continue;
+					}
+					for(String item_name : items_in_title) {
 									
+						int first_space = item_name.indexOf(' ');
+										
+						if(first_space!=-1) {
+							String potential_region = item_name.substring(0, first_space);
+							switch(potential_region) {
+											
+								case ("ring"):
+										item_name = "3" + item_name.substring(first_space);
+										break;
+												
 								case ("isles"):
 									item_name = "2" + item_name.substring(first_space);
 									break;
-									
+												
 								case ("valley"):
 									item_name = "1" + item_name.substring(first_space);
 									break;
-									
+												
 								default:
 									break;
-								
-								}
-									
+											
 							}
-							
-							if(Integer.parseInt(list_being_updated.get(item_name).get(0))<=0) {
-								temp_write.write(item_name);
-							}else {
-								temp_write.write(item_name + ";" + list_being_updated.get(item_name).get(0));
-							}
-							temp_write.newLine();
+												
 						}
+									
+						if(Integer.parseInt(list_being_updated.get(item_name).get(0))<=0) {
+							temp_write.write(item_name);
+						}else {
+							temp_write.write(item_name + ";" + list_being_updated.get(item_name).get(0));
+						}
+						temp_write.newLine();
 					}
-					temp_write.newLine();
-					continue;
 				}
 				
 				if(input_line.charAt(0) == '#' || input_line.charAt(0) == '*') { temp_write.write(input_line); temp_write.newLine(); continue;}
